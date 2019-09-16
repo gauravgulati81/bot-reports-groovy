@@ -1,3 +1,5 @@
+package customReports
+
 import java.io.File
 import java.io.FileWriter
 import java.io.IOException
@@ -25,6 +27,7 @@ public class Reporting {
 	private static String htmlFileName = fileName + ".html";
 	private static String htmlHeader = "<html>" +
 	"<body>" +
+	"<h1 align='center'>"+ fileName +"</h1>" +
 	"<table border = '1' align='center'>" +
 	"<tr>" +
 	"<th>Test Summary</th>" +
