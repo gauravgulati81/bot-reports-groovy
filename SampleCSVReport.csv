@@ -1,4 +1,5 @@
-"Validating visibility of splash screen",PASS
-"Validating version on splash screen",FAIL
-"Validating presence of search icon",PASS
-"Validating presence of the Movies icon",FAIL
+1,Validating visibility of splash screen,FAIL
+2,Validating presence of search icon,PASS
+3,Validating presence of the Movies icon,PASS
+4,Validating presence of the News icon,FAIL
+5,Validating presence of the More icon,BLOCKED
