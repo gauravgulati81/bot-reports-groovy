@@ -1,1 +1,22 @@
-<html><body><table border = '1' align='center'><tr><th>Test Summary</th><th>Test Status</th></tr><tr><td>Validating visibility of splash screen</td><td bgcolor='#32CD32'>PASS</td></tr><tr><td>Validating version on splash screen</td><td bgcolor='#FF0000'>FAIL</td></tr><tr><td>Validating presence of search icon</td><td bgcolor='#32CD32'>PASS</td></tr><tr><td>Validating presence of the Movies icon</td><td bgcolor='#FF0000'>FAIL</td></tr></table></body></html>
+<html><body><h1 align='center'>Report_072547</h1><table border = '1' align='center'><tr><th>S/N</th><th>Test Summary</th><th>Test Status</th></tr><tr><td>1</td><td>Validating visibility of splash screen</td><td bgcolor='#dc143c'>FAIL</td></tr><tr><td>2</td><td>Validating presence of search icon</td><td bgcolor='#14dc50'>PASS</td></tr><tr><td>3</td><td>Validating presence of the Movies icon</td><td bgcolor='#14dc50'>PASS</td></tr><tr><td>4</td><td>Validating presence of the News icon</td><td bgcolor='#dc143c'>FAIL</td></tr><tr><td>5</td><td>Validating presence of the More icon</td><td bgcolor='#d3d3d3'>BLOCKED</td></tr></table><br><br><h2 align='center'>Summary</h2><center><b>Passed: 2<br>Failed: 2<br>Blocked: 1<b></center><div id='piechart' align='center'></div>
+<script type='text/javascript' src="https://www.gstatic.com/charts/loader.js"></script>
+<script type='text/javascript'>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Status', 'PASS/FAIL/BLOCKED'],
+  ['PASS', 2],
+  ['FAIL', 2],
+  ['BLOCKED', 1]
+]);
+
+  var options = {'legend':{position: 'right', alignment: 'center', textStyle: {color: 'default', fontSize: 12}},
+  'width':650, 
+  'height':400, 
+  'colors': ['#14dc50', '#dc143c', '#d3d3d3']};
+
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script></body></html>
