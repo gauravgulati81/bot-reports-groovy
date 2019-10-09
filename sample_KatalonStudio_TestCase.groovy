@@ -25,15 +25,21 @@ else {
 }
 
 
-if (Mobile.verifyElementText(findTestObject('app version - splash screen'), '4.7.8.9', FailureHandling.CONTINUE_ON_FAILURE)){
-	CustomKeywords.'customReports.Reporting.setTestCasePass'(reportsDirectory, "Validating version on splash screen")
-}
-else {
-	CustomKeywords.'customReports.Reporting.setTestCaseFail'(reportsDirectory, "Validating version on splash screen")
+if (Mobile.verifyElementVisible(findTestObject('Update available - CANCEL button'), 30, FailureHandling.OPTIONAL)){
+	Mobile.tap(findTestObject('Update available - CANCEL button'), 10)
 }
 
 CustomKeywords.'customReports.Reporting.validateCondition'(Mobile.verifyElementVisible(findTestObject('Search icon'), 5, FailureHandling.CONTINUE_ON_FAILURE), reportsDirectory, "Validating presence of search icon")
 
 CustomKeywords.'customReports.Reporting.validateCondition'(Mobile.verifyElementVisible(findTestObject('bottom nav movies icon'), 5, FailureHandling.CONTINUE_ON_FAILURE), reportsDirectory, "Validating presence of the Movies icon")
+
+CustomKeywords.'customReports.Reporting.validateCondition'(Mobile.verifyElementVisible(findTestObject('bottom nav news icon'), 5, FailureHandling.CONTINUE_ON_FAILURE), reportsDirectory, "Validating presence of the News icon")
+
+if (Mobile.verifyElementVisible(findTestObject('bottom nav more icon'), 10, FailureHandling.CONTINUE_ON_FAILURE)){
+	CustomKeywords.'customReports.Reporting.setTestCasePass'(reportsDirectory, "Validating presence of the More icon")
+}
+else {
+	CustomKeywords.'customReports.Reporting.setTestCaseBlocked'(reportsDirectory, "Validating presence of the More icon")
+}
 
 CustomKeywords.'customReports.Reporting.generateHTMLReport'(reportsDirectory)
